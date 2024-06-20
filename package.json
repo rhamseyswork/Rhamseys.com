@@ -9,6 +9,8 @@
     "dev": "concurrently \"npm run server:dev\" \"npm run server:client\"",
     "start": "node backEnd/server.js",
     "prod": "npm run lint && npm run build && npm run server:prod",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix client",
     "server:dev": "nodemon backEnd/server.js",
     "server:client": "npm start --prefix client",
     "server:prod": "cross-env NODE_ENV=production node backEnd/server.js",
