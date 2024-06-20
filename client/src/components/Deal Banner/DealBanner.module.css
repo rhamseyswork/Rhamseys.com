@@ -1,0 +1,54 @@
+
+.DealBanner {
+  background-color: navajowhite;
+  color: brown;
+  text-align: center;
+  padding-top: 10px;
+  width: 100vw;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.Slide {
+  animation: slide 15s linear infinite, flash 1.5s linear infinite;
+  animation-fill-mode:both; /* Element stays in its final state after animation */
+  animation-delay: -3s; /* Start animation 5 seconds sooner */
+  white-space: nowrap;
+  animation-range: 80%;
+}
+
+@keyframes slide {
+  0% {
+    opacity: .5;
+    transform: translateX(-60%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: .5;
+    transform: translateX(60%);
+  }
+}
+
+
+@keyframes flash {
+  0% {
+    opacity: 0.5; /* Semi-transparent */
+    text-shadow: none; /* No glow */
+  }
+  10% {
+    opacity: 1; /* Fully visible */
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.8); /* Glow effect */
+  }
+  90% {
+    opacity: 0.5; /* Semi-transparent */
+    text-shadow: none; /* No glow */
+  }
+  100% {
+    opacity: 0.5; /* Semi-transparent */
+    text-shadow: none; /* No glow */
+  }
+}
+

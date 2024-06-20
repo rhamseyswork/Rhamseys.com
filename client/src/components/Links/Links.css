@@ -1,0 +1,27 @@
+.links-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+  
+  .link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .icon {
+    font-size: 34px;
+  }
+  
+}
+
+@media screen and (max-width: 680px) {
+  .links-container {
+    justify-content: center;
+    gap: 10px!important;
+
+  .icon {
+    font-size: 24px;
+  }
+}
+}

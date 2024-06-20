@@ -1,0 +1,59 @@
+/* module.slideshow.css */
+
+/* Slideshow module container */
+.slideshow-module {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust this to your desired maximum width */
+    margin: 0 auto;
+  }
+  
+  /* Slideshow image */
+  .slideshow-module-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Slideshow navigation buttons */
+  .slideshow-module-curr-mod {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Adjust this to change button size */
+    color: Black; /* Change button color as needed */
+  }
+  
+  .slideshow-module-curr-mod.left {
+    left: 10px; /* Adjust this to change left button position */
+  }
+  
+  .slideshow-module-curr-mod.right {
+    right: 10px; /* Adjust this to change right button position */
+  }
+  
+  /* Slideshow indicators */
+  .slideshow-module-curr-sl {
+    position: absolute;
+    bottom: 10px; /* Adjust this to change indicators position */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  
+  .slide-item {
+    margin: 0 5px; /* Adjust this to change spacing between indicators */
+  }
+  
+  /* Active and inactive indicator icons */
+  .slide-item svg {
+    font-size: 12px; /* Adjust this to change indicator icon size */
+    color: Black; /* Change indicator color as needed */
+  }
+  
+  .slide-item svg:not(:last-child) {
+    margin-right: 5px; /* Adjust this to change spacing between icons */
+  }
+  

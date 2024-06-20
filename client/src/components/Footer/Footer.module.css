@@ -1,0 +1,11 @@
+.OC-Pace-Setters{
+    text-align: center;
+}
+
+.OC-Pace-Setters Link {
+    color: orange;
+}
+
+.OC-Pace-Setters Link:hover {
+    color: pink;
+}

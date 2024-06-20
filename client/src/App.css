@@ -1,0 +1,49 @@
+a {
+    color: none !important;
+    text-decoration: none ;
+}
+
+.navBar-tab{
+    color: gainsboro!important;
+}
+.navBar-tab-active {
+    color:darkred !important;
+}
+.navBar-tab:active{
+    color: pink !important;
+}
+
+.navBar-tab:hover{
+    color: brown !important;
+}
+
+
+.rating span {
+    margin: 01.rem;
+}
+
+.rating svg {
+    color: #f8e825;
+}
+.rating-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding-left: 0.5rem;
+}
+
+.product-title {
+    height:2.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.carousel-caption {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+

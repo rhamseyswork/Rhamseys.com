@@ -1,0 +1,66 @@
+.hero-container-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  
+  .hero-image {
+    max-width: 100%;
+    height: 400px;
+    z-index: 1;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    height: 400px;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    bottom: -5px;
+    margin: 0 auto;
+    width: auto;
+    height: 300px;
+    z-index: 2;
+    animation: heroAnimation 5s linear infinite;
+}
+.hero-overlay img {
+    width: auto;
+    height: 300px;
+    position: relative;
+    border-radius: 0px 0px 25px 0px;
+  }
+
+  @keyframes heroAnimation {
+    0% {
+      transform: translateX(0) translateY(2);
+    }
+    50% {
+      transform: translateX(-10px) translateY(-7px); /* Calculate the y-axis movement using tan(25deg) */
+    }
+    100% {
+      transform: translateX(0) translateY(2);
+    }
+  }
+
+
+  .hero-text{
+    z-index: 3;
+    background-color: white;
+  }
+
+  @media screen and (max-width: 600px) {
+    .hero-container {
+         flex-direction: column!important;
+     }
+ }
+    
+
+.hero-container{
+    display: flex;
+    flex-direction: row
+}
