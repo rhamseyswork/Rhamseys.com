@@ -10,8 +10,6 @@
 /coverage
 
 # production
-//build
-/client/build
 /dist_version_control
 
 # misc
