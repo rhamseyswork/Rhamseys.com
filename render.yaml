@@ -3,7 +3,7 @@
 services:
   - type: web # A Python web service named django-app running on a free instance
     plan: Starter
-    name: rhamseys.com
+    name: Rhamseys.com
     runtime: node
     repo: https://github.com/rhamseyswork/Rhamseys.com.git
     buildCommand: "./onRender/build.sh"
