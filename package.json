@@ -13,7 +13,7 @@
     "prod": "npm run lint && npm run build && npm run server:prod",
     "server:prod": "cross-env NODE_ENV=production node backEnd/server.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client && mkdir -p dist_version_control && cp -r client/build dist_version_control/dist_$(date +%Y%m%d_%H%M%S)",
-    "deploy": "git add . && git commit -m 'Deployed to GitHub' && git push origin main --force",
+    "deploy": "git add . && read -p 'Enter commit message: ' commit_message && git commit -m \"$commit_message\" && git push origin main --force",
     "data:import": "node backend/seeder.js",
     "data:destroy": "node backend/seeder.js -d",
     "lint-old": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
