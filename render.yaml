@@ -8,12 +8,12 @@ services:
     repo: https://github.com/rhamseyswork/Rhamseys.com.git
     buildCommand: "./onRender/build.sh"
     startCommand: "npm start"
-    envVars:
-      - key: envVars.MONGO_URI
-        fromDatabase:
-          name: Mongoose-db
-          property: connectionString
+#     envVars:
+#       - key: MONGO_URI
+#         fromDatabase:
+#           name: Mongoose-db
+#           property: connectionString
 
-databases:
-  - name: SQL-db # A PostgreSQL database named django-app-db running on a free instance
-    plan: Starter
+# databases:
+#   - name: SQL-db # A PostgreSQL database named django-app-db running on a free instance
+#     plan: Starter
