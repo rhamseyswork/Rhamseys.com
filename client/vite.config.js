@@ -16,4 +16,11 @@ export default defineConfig({
   build: {
     outDir: 'build', // Specify the output directory as "build"
   },
+  resolve: {
+    alias: {
+      '@components': '/src/components',
+      '@pages': '/src/pages',
+      // Add more aliases as needed
+    },
+  },
 });

@@ -84,6 +84,7 @@
     "url": "https://github.com/rhamseyswork/[URL]/issues"
   },
   "dependencies": {
+    "@paypal/react-paypal-js": "^8.3.0",
     "@react-three/drei": "^9.107.0",
     "@react-three/fiber": "^8.16.8",
     "@reduxjs/toolkit": "^2.2.4",
@@ -91,10 +92,15 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@vis.gl/react-google-maps": "^1.0.2",
-    "web-vitals": "^2.1.4",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
+    "bootstrap-react": "^0.5.0-alpha.14",
     "dotenv": "^16.4.4",
+    "framer-motion": "^11.2.10",
+    "gh-pages": "^3.2.3",
+    "keyframes": "^2.3.0",
+    "maath": "^0.10.7",
+    "npm": "^10.5.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-bootstrap-button": "^1.0.3",
@@ -108,29 +114,25 @@
     "react-redux": "^9.1.2",
     "react-router-bootstrap": "^0.26.2",
     "react-router-dom": "^6.22.3",
-    "react-scripts": "5.0.1",
-    "framer-motion": "^11.2.10",
-    "gh-pages": "^3.2.3",
-    "keyframes": "^2.3.0",
-    "maath": "^0.10.7",
-    "npm": "^10.5.2",
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^10.0.5",
     "react-vertical-timeline-component": "^3.6.0",
     "rollup": "^4.18.0",
-    "@paypal/react-paypal-js": "^8.3.0",
-    "three": "^0.165.0"
+    "three": "^0.165.0",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitejs/plugin-react-refresh": "^1.3.6",
-    "vite": "^5.2.0",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.2.0"
   },
   "eslintConfig": {
     "extends": [

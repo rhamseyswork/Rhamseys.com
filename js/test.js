@@ -1,1 +1,1 @@
-console.log('JavaScript Executable Successfully Run!');
+console.log('JavaScript Executable Successfully Executed!');

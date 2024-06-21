@@ -44,6 +44,24 @@ o_run_cpp() {
 # Function to compile and run Java files
 run_java() {
     java_file="$1"
+    if [ $? -eq 0 ]; then
+        # Compilation successful, now run the Java program
+        java_dir=$(dirname "$java_file")
+        class_name=$(basename "$java_file" .class)
+        cd "$java_dir" || exit 1
+        java "$class_name"  # Execute the Java program
+        exit_code=$?  # Capture the exit code of the Java program
+        if [ $exit_code -ne 0 ]; then
+            echo "Error: Java program $class_name returned a non-zero exit status ($exit_code)."
+        fi
+        cd - > /dev/null  # Return to the previous directory
+    else
+        echo "Error: Compilation of Java program $java_file failed."
+    fi
+}
+
+run_java_() {
+    java_file="$1"
     javac "$java_file"  # Compile the Java file
     if [ $? -eq 0 ]; then
         # Compilation successful, now run the Java program
@@ -88,9 +106,17 @@ else
 fi
 
 # Check if the Java file exists
-java_file="java/test.java"
+java_file="java/test.class"
 if [ -f "$java_file" ]; then
     run_java "$java_file"
+else
+    echo "Error: Java file '$java_file' not found."
+fi
+
+# Check if the Java file exists
+java_file="java/test_.java"
+if [ -f "$java_file" ]; then
+    run_java_ "$java_file"
 else
     echo "Error: Java file '$java_file' not found."
 fi

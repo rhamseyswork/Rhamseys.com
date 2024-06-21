@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    std::cout << "C++ Program Successfully Run!" << std::endl;
+    std::cout << "C++ Executable Successfully Executed!" << std::endl;
     return 0;
 }
 
