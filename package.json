@@ -6,20 +6,13 @@
   "_comment": "npm install --save-dev concurrently",
   "scripts": {
     "deploy": "npm run build && mv dist ./dist_version_control/dist_$(date +%Y%m%d%H%M%S)",
-    "dev": "concurrently \"npm run server:dev\" \"npm run server:client\"",
     "start": "node backEnd/server.js",
-    "prod": "npm run lint && npm run build && npm run server:prod",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix client",
-    "server:dev": "nodemon backEnd/server.js",
-    "server:client": "npm start --prefix client",
-    "server:prod": "cross-env NODE_ENV=production node backEnd/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder.js",
     "data:destroy": "node backend/seeder.js -d",
-    "build": "npm install && npm install --prefix client && npm run build --prefix client && mkdir -p dist_version_control && cp -r client/build dist_version_control/dist_$(date +%Y%m%d_%H%M%S)",
-    "lint-old": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "lint": "eslint . --max-warnings 0",
-    "preview": "vite preview"
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
