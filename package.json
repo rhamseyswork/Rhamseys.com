@@ -1,29 +1,27 @@
 {
-  "name": "@ryanmitchell/official-website",
-  "version": "0.1.0",
+  "name": "Rhamseys Portfolio",
+  "version": "0.0.0",
   "private": true,
-  "description": "Ryan Mitchell Offical Website",
   "type": "module",
-  "main": "server.js",
-  "_comment": "/npm i colors",
-  "_comment1": "/npm i jsonwebtoken",
-  "_comment2": "/npm i cookie-parser",
-  "-comment3": "/npm install jsonwebtoken",
-  "_comment4": "https://github.com/bradtraversy/proshop-v2/blob/main/frontend/src/slices/productsApiSlice.js",
-  "_comment5:": "sudo npm install -g react-native-cli",
-  "_comment6:": "sudo chown -R $USER /usr/local/lib/node_modules/",
-  "_comment7:": "npx react-native@latest init MobileApp",
+  "_comment": "npm install --save-dev concurrently",
   "scripts": {
     "deploy": "npm run build && mv dist ./dist_version_control/dist_$(date +%Y%m%d%H%M%S)",
+    "dev": "concurrently \"npm run server:dev\" \"npm run server:client\"",
     "start": "node backEnd/server.js",
+    "prod": "npm run lint && npm run build && npm run server:prod",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server:dev": "nodemon backEnd/server.js",
+    "server:client": "npm start --prefix client",
+    "server:prod": "cross-env NODE_ENV=production node backEnd/server.js",
     "data:import": "node backend/seeder.js",
     "data:destroy": "node backend/seeder.js -d",
-    "build": "npm install && npm install --prefix client && npm run build --prefix client"
+    "build": "npm install && npm install --prefix client && npm run build --prefix client",
+    "lint-old": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --max-warnings 0",
+    "preview": "vite preview"
   },
-  "repository": {
+    "repository": {
     "type": "git",
     "url": "git+https://github.com/rhamseyswork/[URL]"
   },
