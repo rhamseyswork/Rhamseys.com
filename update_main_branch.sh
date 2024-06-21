@@ -1,6 +1,7 @@
 #!/bin/bash
 #chmod +x update_client_branch.sh
 #./update_client_branch.sh
+#rename to update.sh
 
 # Ensure we're on the server branch
 git checkout main
