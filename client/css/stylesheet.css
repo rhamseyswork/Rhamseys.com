@@ -200,7 +200,7 @@
   */
 @media only screen and (max-width: 1024px) {
   body {
-    flex-direction: column;
+    flex-direction: column!important;
     margin: 40px 30px;
   }
   hr:first-of-type {
@@ -292,6 +292,9 @@
   }
   .social-contact a {
     height: 20px;
+  }
+  .sidebar{
+    margin: 0px 0px 30px 0px!important;
   }
 }
 
