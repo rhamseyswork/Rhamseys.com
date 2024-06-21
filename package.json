@@ -5,23 +5,22 @@
   "type": "module",
   "_comment": "npm install --save-dev concurrently",
   "scripts": {
-    "deploy": "npm run build && mv dist ./dist_version_control/dist_$(date +%Y%m%d%H%M%S)",
+    "start-test": "echo 'Running tests...' && chmod +x test.sh && ./test.sh",
     "dev": "concurrently \"npm run server:dev\" \"npm run server:client\"",
     "start": "node backEnd/server.js",
-    "prod": "npm run lint && npm run build && npm run server:prod",
-    "server": "nodemon backend/server.js",
     "client": "npm start --prefix client",
-    "server:dev": "nodemon backEnd/server.js",
-    "server:client": "npm start --prefix client",
+    "server": "nodemon backEnd/server.js",
+    "prod": "npm run lint && npm run build && npm run server:prod",
     "server:prod": "cross-env NODE_ENV=production node backEnd/server.js",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client && mkdir -p dist_version_control && cp -r client/build dist_version_control/dist_$(date +%Y%m%d_%H%M%S)",
+    "deploy": "git add . && git commit -m 'Deployed to GitHub' && git push origin main --force",
     "data:import": "node backend/seeder.js",
     "data:destroy": "node backend/seeder.js -d",
-    "build": "npm install && npm install --prefix client && npm run build --prefix client && mkdir -p dist_version_control && cp -r client/build dist_version_control/dist_$(date +%Y%m%d_%H%M%S)",
     "lint-old": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint": "eslint . --max-warnings 0",
     "preview": "vite preview"
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/rhamseyswork/rhamseys.com"
   },
@@ -48,6 +47,9 @@
     "react-icons": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/node": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.0"
   }

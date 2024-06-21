@@ -145,6 +145,39 @@ _Below is an example of how you can instruct your audience on installing and set
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
+5. Run Shell Test
+   ```sh
+   npm run start-test
+   ```
+6. Develop Website
+   ```sh
+   npm run dev
+   ```
+6. Command List
+   Start
+   ```sh
+   npm run start
+   ```
+   Client
+   ```sh
+   npm run client
+   ```
+   Server
+   ```sh
+   npm run client
+   ```
+  Production Server
+   ```sh
+   npm run server:prod
+   ```
+  Build
+   ```sh
+   npm run build
+   ```
+   Deploy gh-pages
+   ```sh
+   npm run deploy
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
