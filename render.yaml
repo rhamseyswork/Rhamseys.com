@@ -6,10 +6,10 @@ services:
     name: rhamseys.com
     runtime: node
     repo: https://github.com/rhamseyswork/Rhamseys.com.git
-    buildCommand: "./render/build.sh"
+    buildCommand: "./onRender/build.sh"
     startCommand: "npm start"
     envVars:
-      - key: MONGO_URI
+      - key: envVars.MONGO_URI
         fromDatabase:
           name: Mongoose-db
           property: connectionString
