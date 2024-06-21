@@ -67,11 +67,12 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "npm run build && mv dist ./dist_version_control/dist_$(date +%Y%m%d%H%M%S)",
-    "start": "vite"
+    "start": "vite",
+    "install:l": "npm install --legacy-peer-deps"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rhamseyswork/ryanMitchell_MP3"
+    "url": "git+https://github.com/rhamseyswork/rhamseys.com"
   },
   "keywords": [
     "Rhamseys",
@@ -81,7 +82,7 @@
   "author": "OC Pace Setters",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rhamseyswork/[URL]/issues"
+    "url": "https://github.com/rhamseyswork/rhamseys.com/issues"
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^8.3.0",
@@ -126,11 +127,13 @@
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitejs/plugin-react-refresh": "^1.3.6",
+    "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "gh-pages": "^6.1.1",
+    "postcss": "^8.4.38",
     "tailwindcss": "^3.4.1",
     "vite": "^5.2.0"
   },
