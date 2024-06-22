@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <link async rel="icon" type="image/svg+xml" href="/Rhamseys-Headshot.jpeg" />
+    <link async rel="icon" type="image/svg+xml" href="/Avatar.svg" />
     <!--About The HTML Document-->
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Rhamsyes Garcia Portfolio" />
     <meta name="keywords" content="Rhamseys, Rhmaseys Garcia" />
     <meta name="author" content="Rhamseys Garcia" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#000000" />
     <meta http-equiv="refresh" content="none" />
     <!--Only in dev set to content="30"-->
     <!--Meta Tag Dev Only-->
@@ -21,27 +22,29 @@
     <link title="Default Style" media="all" async rel="preload" as="style" id="stylesheet" href="./css/stylesheet.css" blocking="render" onload="this.rel='stylesheet'" integrity="sha256-Xaw3N6MSNiI5cKKSOVan9G44CCcopk2G+UXqlay1frA=%" crossorigin="anonymous" type="text/css" media="screen"/>
     <!-- <link  href="print.css" rel="alternate stylesheet" media="print" />
     <link href="mobile.css" rel="stylesheet" media="screen and (max-width: 600px)" /> -->
-    <link async rel="prerender" type="image/jpeg" as="image" href="/Rhamseys-Headshot.jpeg" imagesrcset="{{preloadSrcset}}" onload="this.rel='image'" />
-    <link rel="preload" href="/Rhamseys-Headshot.jpeg" as="image">
+    <link async rel="prerender" type="image/jpeg" as="image" href="/Rhamseys-Headshot.svg" imagesrcset="{{preloadSrcset}}" onload="this.rel='image'" />
+    <link rel="manifest" type="XML" href="/manifest.json"/>
+    <link rel="preload" href="/Rhamseys-Headshoot.svg" as="image">
     <link async rel="prefetch" type="txt/js" as="script" href="./src/main.jsx" onload="this.rel='modulepreload'"/>
 
     <!-- <link rel="preload" href="fonts/cicle_fina-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous" /> -->
   </head>
 
   <body style="display: flex; position: relative; flex-direction: row; background: hsl(0, 0%, 7%); font-family: 'Poppins', sans-serif; color: white; scroll-behavior: smooth; margin: 0; padding: 0;">
+    <noscript>You need to enable JavaScript to run my APPLICATION.</noscript>
 <!--SIDEBAR-->
     <aside class="sidebar" style="position: flex; z-index: 1; background: hsl(240, 2%, 12%); border: 1px solid hsl(0, 0%, 22%); box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25); border-radius: 20px; left: 0; top: 0; width: 25%; height: 100vh; margin: 0px 55px; overflow-y: scroll; padding: 10px 15px 10px;">
-      <button id="sidebar-toggle" style="position: sticky; text-align: right; top: 0; width: 100%; padding: 5px 0;">
-        Compress <ion-icon name="reorder-four-outline"></ion-icon>
+      <button id="sidebar-toggle" style="text-align: right; top: 0; width: 100%; padding: 5px 20px 5px 0px; background-color: hsl(0, 1%, 22%); border-radius: 20px;">
+        Compress <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M96 304h320M96 208h320M96 112h320M96 400h320"/></svg></ion-icon>
       </button>
       <hr />
       <div class="sidebar-colum" style="display: flex; flex-direction: column;">
         <div class="sidebar-info">
           <figure class="avatar-box sidebar-info">
-            <a href="/Rhamseys-Headshot.jpeg" target="_blank">
-              <picture>
-                <source srcset="/Rhamseys-Headshot.jpeg 800w" type="image/jpeg">
-                <img src="/Rhamseys-Headshot.jpeg" alt="Rhamseys Garcia" loading="lazy" />
+            <a href="/Avatar.svg" target="_blank">
+              <picture style="display: flex; justify-content: center;">
+                <source srcset="/Avatar.svg 800w" type="image/jpeg">
+                <img src="/Avatar.svg" alt="Avatar" loading="lazy" />
               </picture>
             </a>
           </figure>
@@ -50,8 +53,6 @@
             <p class="titles">
               Student<br/>
               Software Engineer<br/>
-              FULL-Stack Developer<br/>
-              Mortgage Loan Officer<br/>
             </p>
           </div>
         </div>
@@ -123,10 +124,10 @@
       </div>
     </aside>
 <!--DEPENDENCIES-->
-    <script async type="module" src="./src/main.jsx" crossorigin="anonymous" language="JavaScript" integrity="" charset="UTF-8" onload="handleLoad()" onerror="handleError()"></script>
-    <!-- <script defer async type="module" src="./js/index-fallback.js" crossorigin="anonymous" integrity="sha256-XXXX" language="JavaScript" charset="UTF-8"></script>
-    <script defer async type="module" src="./js/index-anon.js" crossorigin="anonymous" language="JavaScript" integrity="sha256-XXXX" charset="UTF-8"></script>
-    <script defer type="module" src="./js/index-main.js" crossorigin="use-credentials" integrity="sha256-XXXX" language="JavaScript" charset="UTF-8"></script> -->
+    <script async type="module" src="./src/main.jsx" crossorigin="anonymous" language="JavaScript" integrity="" charset="UTF-8" onload="handleLoad('primary', 'app')" onerror="handleError('primary', 'app')"></script>
+    <script defer async type="module" src="./js/index-fallback.js" crossorigin="anonymous" integrity="" language="JavaScript" charset="UTF-8" onload="handleLoad('secondary', 'app')" onerror="handleError('secondary', 'app')"></script>
+    <script defer async type="module" src="./js/index-anon.js" crossorigin="anonymous" language="JavaScript" integrity="" charset="UTF-8" onload="handleLoad('primary', '')" onerror="handleError('primary', '')"></script>
+    <script defer type="module" src="./js/index-main.js" crossorigin="use-credentials" integrity="" language="JavaScript" charset="UTF-8" onload="handleLoad('primary', 'fallback')" onerror="handleError('primary', 'fallback')"></script>
     <!--ionicon link - Development use only
     <script async type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
@@ -136,11 +137,11 @@
     </main>
 <!--CONSOLE SCRIPT FUNCTION-->
     <script>
-      function handleLoad() {
-          console.log('Script loaded successfully.');
+      function handleLoad(txt=NaN, func=NaN) {
+        isNaN(txt) || isNaN(func) ? console.log(`${txt} ${func} loaded successfully.`) : NaN;
       }
-      function handleError() {
-          console.log('Error loading the script.');
+      function handleError(txt=NaN, func=NaN) {
+          console.log('Error loading ${txt} ${func}.');
       }
     </script>
 <!-- Google tag (gtag.js) -->

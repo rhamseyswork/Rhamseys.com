@@ -95,7 +95,7 @@ function Footer() {
       <br />
       <br />
       <hr />
-      <p className="OC-Pace-Setters" style={{textAlign:"center"}}>All Right Reserved ©<Link to="https://www.OCPaceSetters.com" style={{color:"orange"}}> OC Pace Setters</Link> ® Rhamseys Garcia<span className="d-block"><Link to="/terms">Terms </Link>|<Link to="/privacy"> Privacy</Link></span></p>
+      <p className="OC-Pace-Setters" style={{textAlign:"center"}}>All Right Reserved © <Link to="https://www.OCPaceSetters.com" style={{color:"orange"}}>OC Pace Setters</Link> ® Rhamseys Garcia<span className="d-block"><Link to="/terms">Terms </Link>|<Link to="/privacy"> Privacy</Link></span></p>
     </div>
   )
 }

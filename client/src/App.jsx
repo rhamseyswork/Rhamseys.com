@@ -49,13 +49,17 @@ function App() {
     );
   });
   
-    const tabs = routes.map((route) => {
-        return <Route 
-        key={route.tab} 
-        path={route.path} 
-        render={() => <LazyLoadPage tab={route.path.slice(1).includes('/') ? route.tab : route.path.slice(1)} />} 
-        /> ;
-    });
+  const tabs = routes.map(({ path, tab }) => (
+    <Route
+      key={tab}  // Use `tab` as the unique key for each route
+      path={path}
+      render={() => (
+        <LazyLoadPage
+          tab={path.slice(1).includes('/') ? tab : path.slice(1)}  // Adjusted logic based on `path`
+        />
+      )}
+    />
+  ));
 
   return (
     <>
@@ -75,7 +79,7 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Website Loading...</div>}>
         <Routes index={true}>
-          {/*tabs*/}
+          {tabs}
           {/*<Route path='' element={<PrivateRoute />}>
             <Route path='/Shipping' element={<Pages.Shipping />} />
             <Route path='/Payment' element={<Pages.Payment />} />
