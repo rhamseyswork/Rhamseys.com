@@ -9,13 +9,14 @@ import { logout } from '../../slices/authSlice';
 import SearchBox from '../Search Box/SearchBox';
 import PropTypes from 'prop-types';
 import { resetCart } from '../../slices/cartSlice';
-// import Links from './Links/Links';
+import Links from '../Links/Links';
+import DealBanner from '../Deal Banner/DealBanner';
 
 //npm install react-bootstrap-dropdown-menu
 //npm install react-bootstrap-form
 //npm install react-bootstrap-button
 
-const NavBar = ({ Tabs, children, setTabClassName }) => {
+const NavBar = ({ Path, Tabs, children, setTabClassName }) => {
   const location = useLocation();
   const [activeTab, setActiveTab] = useState('');
 
@@ -39,38 +40,36 @@ const NavBar = ({ Tabs, children, setTabClassName }) => {
   };
 
   useEffect(() => {
-    // Find the active tab based on the current location
-    const foundTab = Tabs.find(tab => {
-      if (Array.isArray(tab)) {
-        return tab.slice(1).includes(location.pathname.slice(1));
-      } else {
-        return tab.toLowerCase() === location.pathname.slice(1).toLowerCase();
-      }
-    });
-    setActiveTab(foundTab);
-    // console.log(foundTab);
-    // setTabClassName(foundTab);
+    if (Tabs) {
+      // Find the active tab based on the current location
+      const foundTab = Tabs.tab.find(tab => {
+        if (tab.includes('/')) {
+          return tab.slice(1).includes(location.pathname.slice(1));
+        } else {
+          return tab.toLowerCase() === location.pathname.slice(1).toLowerCase();
+        }
+      });
+      setActiveTab(foundTab);
+    }
   }, [Tabs, location.pathname, setTabClassName]);
 
-  const renderTabs = (tabs) => {
-    return tabs.map((tab, index) => {
-      if (Array.isArray(tab)) {
-        const dropdownTitle = tab[0];
-        const dropdownItems = tab.slice(1);
+  const renderTabs = () => {
+    return Tabs.map((tab, index) => {
+      if (Path[index].slice(1).split('/').length > 1) {
+        const dropdownTitle = Path[index].slice(1).split('/')[0];
+        const dropdownItems = Path[index].slice(1).split('/')[1];
         return (
-          <NavDropdown key={`dropdown-${index}`} title={dropdownTitle} id={`dropdown-${index}`}>
-            {dropdownItems.map((item, idx) => (
+          <NavDropdown key={dropdownTitle} title={dropdownTitle} id={dropdownTitle}>
               <NavDropdown.Item 
               className={activeTab === tab ? 'navBar-tab-active' : ''}
-              eventKey={idx} key={idx} as={Link} to={`${item}`}>
-                {item}
+              eventKey={dropdownTitle} key={dropdownTitle} as={Link} to={dropdownItems}>
+                {dropdownItems}
               </NavDropdown.Item>
-            ))}
           </NavDropdown>
         );
       } else {
         return (
-          <Nav.Link key={tab} as={Link} to={tab} className={activeTab === tab ? 'navBar-tab-active' : 'navBar-tab'}>
+          <Nav.Link key={tab} as={Link} to={Path[index]} className={activeTab === tab ? 'navBar-tab-active' : 'navBar-tab'}>
             {tab}
           </Nav.Link>
         );
@@ -78,9 +77,9 @@ const NavBar = ({ Tabs, children, setTabClassName }) => {
     });
   };
   
-
   return (
     <header className='navBarSudo'>
+      {(location.pathname == "/" || location.pathname == "/Merch") && <DealBanner />}
       <Navbar className='navBar' bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container className="navBar-1">
           <Navbar.Brand to="/">
@@ -89,7 +88,7 @@ const NavBar = ({ Tabs, children, setTabClassName }) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              {renderTabs(Tabs)}
+              {renderTabs()}
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -130,7 +129,7 @@ const NavBar = ({ Tabs, children, setTabClassName }) => {
           </Navbar.Collapse>
         </Container>
         <Navbar.Collapse className='links-container'>
-          {/* <Links /> */}
+          <Links />
         </Navbar.Collapse>
       </Navbar>
     </header>

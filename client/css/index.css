@@ -1,13 +1,19 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
+/*-----------------------------------*\
+  #./css/stylesheet.css
+\*-----------------------------------*/
+
+/**
+ * ©® Rhamseys Garcia 2022
+ */
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+/* \*-----------------------------------*/
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components'; */ 
 @import 'tailwindcss/utilities';
 
 
 html {
   scroll-behavior: smooth;
 }
-
-h1{
-  padding: 20px 0px !important;
-}
-

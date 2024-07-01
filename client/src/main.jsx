@@ -6,6 +6,7 @@ import store from '../js/store.js';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App.jsx';
+import '../css/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from  '../js/reportWebVitals.js';
 // import { ModalProvider } from "react-modal-hook";

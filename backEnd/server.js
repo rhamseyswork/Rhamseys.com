@@ -10,7 +10,7 @@ import tourDatesRoutes from './routes/tourDatesRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
-const port = process.env.PORT || 8000;
+import dailyReportRoutes from './routes/dailyReportRoutes.js';
 // const express = require('express');
 //npm i -D nodemon concurrently
 //npm i dotenv 
@@ -31,6 +31,7 @@ app.use('/api/tourdates', tourDatesRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/dailyreport', dailyReportRoutes);
 
 app.get('/api/config/paypal', (req, res) => 
     res.send({ clientId: process.env.PAYPAL_CLIENT_ID})
@@ -54,6 +55,7 @@ if(process.env.NODE_ENV === 'production'){
 app.use(notFound);
 app.use(errorHandler);
 
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });

@@ -2,46 +2,48 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FooterBox from './Footer_Box';
 import { Container, Row, Col } from 'react-bootstrap';
-import './Footer.module.css'
-import axios from 'axios';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useReportMutation } from '../../slices/dailyReportApiSlice'; // Import useReportMutation from your apiSlice
 
 function Footer() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [reportMutation, { isLoading: isReportLoading, isError, error }] = useReportMutation();
 
- useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        const options = {
-          method: 'GET',
-          url: 'https://real-time-finance-data.p.rapidapi.com/currency-news',
-          params: {
-            from_symbol: 'USD',
-            language: 'en',
-            to_symbol: 'EUR'
-          },
-          headers: {
-            'x-rapidapi-key': '3329ce90d2mshfff23d22225e84cp10d417jsn2fb5e8c7a837',
-            'x-rapidapi-host': 'real-time-finance-data.p.rapidapi.com'
-          }
+        const reportData = {
+          // Adjust report data structure as needed
+          from_symbol: 'USD',
+          to_symbol: 'EUR',
+          language: 'en'
         };
         
-        try {
-          const response = await axios.request(options);
-          setData(response.data);
-          setLoading(false);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-          setLoading(false);
-        }
+        const result = await reportMutation(reportData);
+        setData(result.data);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
         setLoading(false);
       }
     };
+
     fetchData();
-  }, []); 
+  }, [reportMutation]); // Ensure to add reportMutation as a dependency if needed
+
+  const { from_symbol, to_symbol, type, news } = data || {};
+  const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
+
+  const nextArticle = () => {
+    setCurrentArticleIndex((prevIndex) => (prevIndex + 1) % news.length);
+  };
+
+  const prevArticle = () => {
+    setCurrentArticleIndex((prevIndex) =>
+      prevIndex === 0 ? news.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
     <div className='Footer mb-8'>
@@ -50,21 +52,22 @@ function Footer() {
       <br />
       <br />
       <Container>
-        <Row style={{gap:"20px",}}>
+        <Row style={{ gap: "20px" }}>
           <Col>
-            <FooterBox title='Rhamseys&nbsp;Garcia'><hr style={{border:"solid 3px black"}}/>
-              <span style={{margintop: "50rem"}}>
+            <FooterBox title='Rhamseys&nbsp;Garcia'>
+              <hr style={{ border: "solid 3px black" }} />
+              <span style={{ margintop: "50rem" }}>
                 This is my Portfolio I have you enjoy your user experience and come back as often as you like.
               </span>
             </FooterBox>
           </Col>
           <div className="vr p-0" />
           <Col>
-          <FooterBox title="Contact">
-            <span>Email:<Link href="mailto:admin@ryanmitchellofficiall.com" className="ml-1">&nbsp;admin@rhamseys.com</Link></span>
-            <br />
-            <span className="mt-2">Phone: <a href="tel:+19493852092">+1(949)385-2092</a></span>
-          </FooterBox>
+            <FooterBox title="Contact">
+              <span>Email:<Link href="mailto:admin@ryanmitchellofficiall.com" className="ml-1">&nbsp;admin@rhamseys.com</Link></span>
+              <br />
+              <span className="mt-2">Phone: <a href="tel:+19493852092">+1(949)385-2092</a></span>
+            </FooterBox>
           </Col>
           <div className="vr p-0" />
           <Col>
@@ -78,14 +81,14 @@ function Footer() {
               <Link to="/ReportABug" className="d-block">Report A Bug</Link>
               <Link to="/faq" className="d-block">FAQ</Link>
 
-              </span></FooterBox>
+            </span></FooterBox>
           </Col>
           <div className="vr p-0" />
 
           <Col>
-            <FooterBox title="Daily API Metrics"><hr style={{border:"solid 3px black"}}/>
+            <FooterBox title="Daily API Metrics"><hr style={{ border: "solid 3px black" }} />
               <div>
-                <DisplayResponse responseData={data.data} loading={loading} />
+                <DisplayResponse responseData={data} loading={loading || isReportLoading} />
               </div>
             </FooterBox>
           </Col>
@@ -95,15 +98,13 @@ function Footer() {
       <br />
       <br />
       <hr />
-      <p className="OC-Pace-Setters" style={{textAlign:"center"}}>All Right Reserved © <Link to="https://www.OCPaceSetters.com" style={{color:"orange"}}>OC Pace Setters</Link> ® Rhamseys Garcia<span className="d-block"><Link to="/terms">Terms </Link>|<Link to="/privacy"> Privacy</Link></span></p>
+      <p className="OC-Pace-Setters" style={{ textAlign: "center" }}>All Right Reserved © <Link to="https://www.OCPaceSetters.com" style={{ color: "orange" }}>OC Pace Setters</Link> ® Rhamseys Garcia<span className="d-block"><Link to="/terms">Terms </Link>|<Link to="/privacy"> Privacy</Link></span></p>
     </div>
   )
 }
 
-
-
 const DisplayResponse = ({ responseData, loading }) => {
-  const { from_symbol, to_symbol, type, news } = responseData || {};
+  const { news } = responseData || {};
   const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
 
   const nextArticle = () => {
@@ -150,10 +151,10 @@ const DisplayResponse = ({ responseData, loading }) => {
               </div>
               <div style={{ textAlign: 'center' }}>
                 <button onClick={prevArticle} style={{ marginRight: '10px' }}>
-                  <FaArrowLeft/>Prev
+                  <FaArrowLeft />Prev
                 </button>
                 <button onClick={nextArticle}>
-                  Next <FaArrowRight/>
+                  Next <FaArrowRight />
                 </button>
               </div>
             </>

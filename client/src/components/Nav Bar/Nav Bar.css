@@ -1,6 +1,6 @@
 .navBarSudo{
-    width: 100vw;
-
+    width: 100%;
+    
 .navBar:last-child {
     display: grid;
     justify-content: center;

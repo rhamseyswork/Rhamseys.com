@@ -6,7 +6,6 @@ import Resume from './About/Resume.jsx'
 import Portfolio from './About/Portfolio.jsx'
 import Blog from './Blog/Blog.jsx'
 import Contact from './Contact.jsx'
-import Merch from './Merch.jsx'
 import Cart from './Payment/Cart.jsx'
 import Login from './loginSignUp/LoginSignUp.jsx'
 import Register from './loginSignUp/loginSignUp/SignUp/Register.jsx'
@@ -41,7 +40,6 @@ const manifest = {
     Portfolio,
     Blog,
     Contact,
-    Merch,
     Cart,
     Login,
     Register, 
