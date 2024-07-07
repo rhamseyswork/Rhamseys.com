@@ -96,12 +96,12 @@ const NavBar = ({ Tabs, children, setTabClassName }) => {
         <Container className='navBar-2'>
           <Nav className='navBar-2i'>
             <SearchBox className="d-flex"/>
-            <Link to="/cart" className="nav-link">
+            {/* <Link to="/cart" className="nav-link">
               <FaShoppingCart /> Cart
               {cartItems.length > 0 && (
               <Badge pill bg='success' style={{ marginLeft: '5px' }}>{cartItems.reduce((a, c) => a + c.qty, 0)}</Badge>
               )}
-            </Link>
+            </Link> */}
             {userInfo ? (
               <NavDropdown title={userInfo.name} id='username'>
                 <NavDropdown.Item as={Link} to='/profile' className="text-black">
