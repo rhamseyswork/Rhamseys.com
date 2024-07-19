@@ -6,11 +6,6 @@ import Resume from './About/Resume.jsx'
 import Portfolio from './About/Portfolio.jsx'
 import Blog from './Blog/Blog.jsx'
 import Contact from './Contact.jsx'
-import Cart from './Payment/Cart.jsx'
-import Login from './loginSignUp/LoginSignUp.jsx'
-import Register from './loginSignUp/loginSignUp/SignUp/Register.jsx'
-import Shipping from './Payment/Shipping.jsx'
-import Payment from './Payment/Payment.jsx'
 import PlaceOrder from './Payment/PlaceOrder.jsx'
 import Order from './Payment/Order.jsx'
 import Profile from './Profile.jsx'
@@ -40,11 +35,6 @@ const manifest = {
     Portfolio,
     Blog,
     Contact,
-    Cart,
-    Login,
-    Register, 
-    Shipping,
-    Payment,
     PlaceOrder,
     Order,
     Profile,

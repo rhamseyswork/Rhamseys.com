@@ -5,9 +5,9 @@ const title = "Home";
 
 const tabs = [
     ["Resume", "About", "Resume", "Portfolio"],
-    "Merch",
     "Blog",
     "Contact",
+    "Console",
 ];
 
 
