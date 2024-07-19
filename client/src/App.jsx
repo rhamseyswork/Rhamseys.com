@@ -13,7 +13,6 @@ import Components from './components/manifest.js';
 import Pages from './Pages/mainifest.js';
 import PrivateRoute from './components/Private Route/PrivateRoute.jsx';
 import AdminRoute from './components/Admin Route/AdminRoute.jsx'
-import SuperAdminRoute from './components/Super Admin Route/SuperAdminRoute.jsx'
 import { ToastContainer } from "react-bootstrap";
 import "react-toastify/dist/ReactToastify.css";
 import Meta from './components/Meta/Meta.jsx';
@@ -72,9 +71,6 @@ function App() {
           <Route path='/admin/dashboard' element={<Pages.admin.Portal />}/> 
           <Route path='/admin/metrics' element={<Pages.admin.Metrics />}/> 
           <Route path='/admin/linktree' element={<Pages.admin.LinkTreeAdmin />}/> 
-        </Route>
-        <Route path='' element={<SuperAdminRoute />}>
-          <Route path='/superadmin/dashboard' element={<Pages.superAdmin.PortalA />}/> 
         </Route>
         <Route path='/login' element={<Pages.Login />} />
         <Route path='/logout' element={<LogoutPage onLogout={logoutHandler} />} />
