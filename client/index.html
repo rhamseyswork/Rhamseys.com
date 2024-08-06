@@ -6,40 +6,53 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Rhamsyes Garcia Portfolio" />
-    <meta name="keywords" content="Rhamseys, Rhmaseys Garcia" />
+    <meta name="keywords" content="Rhamseys, Rhmaseys Garcia, Portfolio" />
     <meta name="author" content="Rhamseys Garcia" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#000000" />
     <meta http-equiv="refresh" content="none" />
-    <!--Only in dev set to content="30"-->
-    <!--Meta Tag Dev Only-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!--Viewport for IE-->
-    <!--Open Graph Tags (e.g., <meta property="og:title" content="title-here">-->
-    <!--Twitter Card Tags (e.g., <meta name="twitter:card" content="summary-large-image">)-->
+    <meta property="og:title" content="Portfolio">
+    <meta property="og:description" content="I hope you enjoy your user experience">
+    <meta property="og:url" content="https://Rhamseys.com/">
+    <meta property="og:image" content="/Avatar.svg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name="apple-mobile-web-app-title" content="Rhamseys Garcia">
+    <meta name="Rhamseys" content="Portfolio">
     <title>Rhamseys | Portfolio</title>
-<!--Stylesheet ©-->
-    <link rel="stylesheet" title="Default Style" media="all" async rel="preload" as="style" id="stylesheet" href="./css/stylesheet.css" blocking="render" onload="this.rel='stylesheet'" integrity="sha256-Xaw3N6MSNiI5cKKSOVan9G44CCcopk2G+UXqlay1frA=%" crossorigin="anonymous" type="text/css" media="screen"/>
-    <!-- <link  href="print.css" rel="alternate stylesheet" media="print" />
-    <link href="mobile.css" rel="stylesheet" media="screen and (max-width: 600px)" /> -->
-    <link rel="preload" fetchpriority="high" as="image" type="image/svg+xml" href="/Avatar.svg" imagesrcset="{{preloadSrcset}}" onload="this.rel='preload'" />
-    <link rel="manifest" type="XML" href="/manifest.json"/>
-    <link async rel="prefetch" type="txt/js" as="script" href="./src/main.jsx" onload="this.rel='prefetch'"/>
-    <!-- <link rel="preload" href="fonts/cicle_fina-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous" /> -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KEW4G27HG5"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    // Update the 'config' call to set cookie_flags to 'max-age=7200;secure;samesite=none'
-    gtag('config', 'G-KEW4G27HG5', {
+    <link rel="stylesheet" title="Default Style" media="all" as="stylesheet" id="stylesheet" href="./css/stylesheet.css" blocking="render" onload="this.rel='stylesheet'" integrity="sha256-" crossorigin="anonymous" type="text/css" media="screen"/>
+    <link rel="alternate stylesheet" title="Print Style" media="all" as="stylesheet" id="printStylesheet" href="./css/print.css" blocking="render" onload="this.rel='stylesheet'" integrity="sha256-" crossorigin="anonymous" type="text/css" media="print" />
+    <link rel="stylesheet" title="Moblie Style" media="all" as="stylesheet" id="moblieStylesheet" href="./css/mobile.css" blocking="render" onload="this.rel='stylesheet'" integrity="sha256-" crossorigin="anonymous" type="text/css" media="screen and (max-width: 600px)" /> 
+    <link rel="preload" type="image/svg+xml" as="image" fetchpriority="high" href="/Avatar.svg" imagesrcset="{{preloadSrcset}}" onload="this.rel='prefetch'" />
+    <link rel="manifest" type="XML" as="json" href="/manifest.json" crossorigin="anonymous"/>
+    <link rel="preload" type="txt/js" as="script" href="./src/main.jsx" crossorigin="anonymous" onload="this.rel='prefetch'"/>
+    <link rel="preload" type="txt/js" as="font" href="fonts/cicle_fina-webfont.woff2" crossorigin="anonymous" onload="this.rel='prefetch'"/>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Portfolio",
+        "name": "Rhamseys Garcia",
+        "url": "https://ryanmitchell-mp3.onrender.com/",
+        "description": "Welcome to my portfolio. I hope you enjoy your user experience.",
+        "sameAs": [
+          "https://twitter.com/yourtwitterhandle",
+          "https://www.facebook.com/yourfacebookpage"
+        ]
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEW4G27HG5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      // Update the 'config' call to set cookie_flags to 'max-age=7200;secure;samesite=none'
+      gtag('config', 'G-KEW4G27HG5', {
         'cookie_flags': 'max-age=7200;secure;samesite=none'
-    });
-    // Optional: Set 'cookie_update' to true if you want to update cookies on user interactions
-    gtag('set', 'cookie_update', true);
-</script>
+      });
+      gtag('set', 'cookie_update', true);
+    </script>
   </head>
 
   <body style="display: flex; position: relative; flex-direction: row; background: hsl(0, 0%, 7%); font-family: 'Poppins', sans-serif; color: white; scroll-behavior: smooth; margin: 0; padding: 0;">
@@ -47,7 +60,7 @@
 <!--SIDEBAR-->
     <aside class="sidebar" style="position: flex; z-index: 1; background: hsl(240, 2%, 12%); border: 1px solid hsl(0, 0%, 22%); box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25); border-radius: 20px; left: 0; top: 0; width: 25%; height: 100%; margin: 0px 55px; padding: 10px 15px 10px;">
       <button id="sidebar-toggle" style="text-align: right; top: 0; width: 100%; padding: 5px 20px 5px 0px; background-color: hsl(0, 1%, 22%); border-radius: 20px;">
-        Compress <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M96 304h320M96 208h320M96 112h320M96 400h320"/></svg></ion-icon>
+        Compress <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M96 304h320M96 208h320M96 112h320M96 400h320"/></svg>
       </button>
       <hr />
       <div class="sidebar-colum" style="display: flex; flex-direction: column;">
@@ -84,7 +97,7 @@
               </div>
             </li>
             <li class="contact-item">
-              <svg alt="GitHub LOGO" class="icon-box" style="fill: #ed7800;" width="100px" height="100px" loading="lazy" style="fill: white;" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" class="ionicon" viewBox="0 0 512 512"><path d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 003.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 01-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0025.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 015-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 01112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 015 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 004-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z"/></svg>              </a>
+              <svg alt="GitHub LOGO" class="icon-box" style="fill: #ed7800;" width="100px" height="100px" loading="lazy" style="fill: white;" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" class="ionicon" viewBox="0 0 512 512"><path d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 003.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 01-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0025.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 015-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 01112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 015 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 004-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z"/></svg>
               <div class="contact-info">
                 <p class="contact-title">GitHub:</p>
                 <a href="github.com/rhamseyswork.io">RhamseysWork</a>
@@ -134,11 +147,9 @@
     <!--ionicon link - Development use only
     <script async type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
-<!--REACT VITE MAIN APPLICATION-->
     <main class="layout">
       <div id="root"></div>
     </main>
-<!--CONSOLE SCRIPT FUNCTION-->
     <script>
       function handleLoad(txt=NaN, func=NaN) {
         isNaN(txt) || isNaN(func) ? console.log(`${txt} ${func} loaded successfully.`) : NaN;

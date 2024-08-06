@@ -6,24 +6,21 @@ import Resume from './About/Resume.jsx'
 import Portfolio from './About/Portfolio.jsx'
 import Blog from './Blog/Blog.jsx'
 import Contact from './Contact.jsx'
-import PlaceOrder from './Payment/PlaceOrder.jsx'
-import Order from './Payment/Order.jsx'
 import Profile from './Profile.jsx'
+import Login from './Login.jsx'
+import Terms from './Terms.jsx'
+import Privacy from './Privacy.jsx'
 
 
 
 //admin
-import OrderList from './admin/OrderList.jsx';
-import ProductList from './admin/ProductList.jsx';
-import ProductEdit from './admin/ProductEdit.jsx';
-import UserList from './admin/UserList.jsx';
-import UserEdit from './admin/UserEdit.jsx';
+import Portal from './admin/dashboard.jsx';
+import Metrics from './admin/metrics.jsx';
+import LinkTreeAdmin from './admin/linktree.jsx';
 const admin = {
-    OrderList,
-    ProductList,
-    ProductEdit,
-    UserList,
-    UserEdit
+    Portal,
+    Metrics,
+    LinkTreeAdmin,
 }
 
 
@@ -35,9 +32,10 @@ const manifest = {
     Portfolio,
     Blog,
     Contact,
-    PlaceOrder,
-    Order,
     Profile,
+    Login,
+    Terms,
+    Privacy,
     admin
 }
 

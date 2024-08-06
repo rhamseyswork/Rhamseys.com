@@ -14,7 +14,6 @@ function Footer() {
     const fetchData = async () => {
       try {
         const reportData = {
-          // Adjust report data structure as needed
           from_symbol: 'USD',
           to_symbol: 'EUR',
           language: 'en'
@@ -26,6 +25,7 @@ function Footer() {
       } catch (error) {
         console.error('Error fetching data:', error);
         setLoading(false);
+        // Optionally, you can set an error state here to display a user-friendly message
       }
     };
 

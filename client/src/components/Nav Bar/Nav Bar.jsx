@@ -4,11 +4,11 @@ import { Navbar, Nav, Container, Badge, NavDropdown } from 'react-bootstrap';
 import "./Nav Bar.css";
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
-import { useLogoutMutation } from '../../slices/usersApiSlice';
-import { logout } from '../../slices/authSlice';
-import SearchBox from '../Search Box/SearchBox';
+// import { useLogoutMutation } from '../../slices/toImport/';
+// import { logout } from '../../slices/authSlice';
+// import SearchBox from '../Search Box/SearchBox';
 import PropTypes from 'prop-types';
-import { resetCart } from '../../slices/cartSlice';
+// import { resetCart } from '../../slices/cartSlice';
 
 const NavBar = ({ Tabs, children, setTabClassName }) => {
   const location = useLocation();
